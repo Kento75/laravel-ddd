@@ -36,8 +36,3 @@
 docker-compose up -d
 docker exec -it php-webapp /docker-bootstrap.sh
 ```
-
-## 参考
-
--   https://www.youtube.com/watch?v=ZSjc2tqUmmI
-# laravel-ddd
