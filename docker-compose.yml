@@ -1,0 +1,56 @@
+version: "2"
+services:
+  # Nginx + PHP + Laravel
+  webapp:
+    container_name: php-webapp
+    build:
+      dockerfile: ./docker/webapp/Dockerfile
+      context: .
+    environment:
+      TZ: "Asia/Tokyo"
+    # systemctlの有効化
+    privileged: true
+    cap_add:
+      - SYS_ADMIN
+    security_opt:
+      - seccomp:unconfined
+    ports:
+      - "8080:80"
+      - "9011:9001"
+      - "22011:22"
+    volumes:
+      - "./src/:/var/www/app/public"
+
+  mysql:
+    image: mysql:5.7
+    container_name: "laravel-mysql"
+    restart: always
+    tty: true
+    environment:
+      TZ: 'Asia/Tokyo'
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: test_database
+    ports:
+      - 13306:3306
+    volumes:
+      - ./docker/mysql/conf/my.cnf:/etc/mysql/conf.d/my.cnf
+      - ./docker/mysql/sql/:/docker-entrypoint-initdb.d
+      - laravel-mysql-db:/var/lib/mysql
+
+  # phpMyAdmin
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    container_name: phpmyadmin
+    restart: always
+    tty: true
+    environment:
+    - PMA_ARBITRARY=1
+    - PMA_HOSTS=laravel-mysql
+    - PMA_USER=root
+    - PMA_PASSWORD=root
+    ports:
+    - 8081:80
+
+volumes:
+  laravel-mysql-db:
+    driver: local
