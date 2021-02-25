@@ -1,6 +1,6 @@
 <?php
 
-namespace Tests\Feature\app\Domain\Entities;
+namespace Tests\Feature\app\Domain\Task\Entities;
 
 use Tests\TestCase;
 use Illuminate\Foundation\Testing\WithFaker;
@@ -8,8 +8,8 @@ use Illuminate\Foundation\Testing\RefreshDatabase;
 
 use Carbon\Carbon;
 
-use App\Domain\Entities\Task;
-use App\Domain\Values\TaskStatus;
+use App\Domain\Task\Entities\Task;
+use App\Domain\Task\Values\TaskStatus;
 
 class TaskTest extends TestCase
 {

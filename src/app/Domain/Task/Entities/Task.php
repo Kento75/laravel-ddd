@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Domain\Entities;
+namespace App\Domain\Task\Entities;
 
-use App\Domain\Values\TaskStatus;
+use App\Domain\Task\Values\TaskStatus;
 use Ramsey\Uuid\Uuid;
 
 class Task

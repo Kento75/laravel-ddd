@@ -1,6 +1,6 @@
 <?php
 
-namespace Tests\Feature\app\UseCase;
+namespace Tests\Feature\app\UseCase\Task;
 
 use Tests\TestCase;
 use Illuminate\Foundation\Testing\WithFaker;
@@ -16,8 +16,8 @@ class TaskCreateUseCaseTest extends TestCase
      */
     public function createTask()
     {
-    // Arrange
-      $
+        // Arrange
+      
 
     // Act
 

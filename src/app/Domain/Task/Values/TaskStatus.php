@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Domain\Values;
+namespace App\Domain\Task\Values;
 
 use MyCLabs\Enum\Enum;
 
