@@ -21,7 +21,7 @@ class Task
             throw new \InvalidArgumentException;
         }
 
-        $this->id = Uuid::uuid4();
+        $this->id = Uuid::uuid4()->toString();
         $this->taskStatus = TaskStatus::UNDONE();
         $this->name = $name;
         $this->dueDate = $dueDate;

@@ -14,7 +14,7 @@ class User
 
     public function __construct(string $name)
     {
-        $this->userId = Uuid::uuid4();
+        $this->userId = Uuid::uuid4()->toString();
         $this->name = $name;
         $this->userStatus = UserStatus::ACTIVE();
     }

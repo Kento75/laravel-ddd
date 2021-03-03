@@ -1,22 +1,22 @@
 <?php
 
-namespace Tests\Feature\app\Domain\Repositories;
+namespace Tests\Feature\App\Domain\User\Repositories;
 
 use App\Domain\User\Entities\User;
-use App\Domain\User\Repository\UserRepository;
+use App\Domain\User\Repositories\UserRepository;
 
 // UseCaseヘルパークラス
 class UserMockRepository implements UserRepository
 {
     private $data = [];
 
-    public function findById(string $userId)
+    public function findById(string $userId): User
     {
         return $this->data[$userId];
     }
 
     public function save(User $user)
     {
-        $data[$user.getUserId()] = $user;
+        $this->data[$user->getUserId()] = $user;
     }
 }

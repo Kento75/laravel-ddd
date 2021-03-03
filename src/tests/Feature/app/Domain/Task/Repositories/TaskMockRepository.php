@@ -1,9 +1,9 @@
 <?php
 
-namespace Tests\Feature\app\Domain\Repositories;
+namespace Tests\Feature\app\Domain\Task\Repositories;
 
 use App\Domain\Task\Entities\Task;
-use App\Domain\Task\Repository\TaskRepository;
+use App\Domain\Task\Repositories\TaskRepository;
 
 // UseCaseヘルパークラス TaskDB
 class TaskMockRepository implements TaskRepository

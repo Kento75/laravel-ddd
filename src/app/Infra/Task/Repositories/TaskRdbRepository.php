@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Infra\Repositories;
+namespace App\Infra\Task\Repositories;
 
-use App\domain\Repositories\TaskRepository;
+use App\domain\Task\Repositories\TaskRepository;
 
 class TaskRdbRepository implements TaskRepository
 {
