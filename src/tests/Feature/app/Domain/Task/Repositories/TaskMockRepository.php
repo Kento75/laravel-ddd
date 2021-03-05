@@ -1,22 +1,22 @@
 <?php
 
-namespace Tests\Feature\app\Domain\Task\Repositories;
+namespace Tests\Feature\App\Domain\Task\Repositories;
 
 use App\Domain\Task\Entities\Task;
 use App\Domain\Task\Repositories\TaskRepository;
 
-// UseCaseヘルパークラス TaskDB
+// UseCaseヘルパークラス
 class TaskMockRepository implements TaskRepository
 {
     private $data = [];
 
-    public function findById(string $taskId)
+    public function findById(string $taskId): Task
     {
         return $this->data[$taskId];
     }
 
     public function save(Task $task)
     {
-        $data[$task.getTaskId()] = $task;
+        $this->data[$task->getId()] = $task;
     }
 }

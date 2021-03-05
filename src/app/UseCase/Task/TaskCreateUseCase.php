@@ -3,6 +3,7 @@
 namespace App\UseCase\Task;
 
 use App\domain\Task\Repositories\TaskRepository;
+use App\Domain\Task\Entities\Task;
 
 class TaskCreateUseCase
 {
@@ -10,6 +11,10 @@ class TaskCreateUseCase
 
     public function __construct(TaskRepository $taskRepository)
     {
+        if($taskRepository === null) {
+            throw new \InvalidArgumentException;
+        }
+
         $this->taskRepository = $taskRepository;
     }
 
@@ -18,6 +23,9 @@ class TaskCreateUseCase
      */
     public function createTask($name, $dueDate)
     {
-        return null;
+        $task = new Task($name, $dueDate);
+        $this->taskRepository->save($task);
+
+        return $task->getId();
     }
 }
