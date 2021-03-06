@@ -11,7 +11,7 @@ class TaskCreateUseCase
 
     public function __construct(TaskRepository $taskRepository)
     {
-        if($taskRepository === null) {
+        if ($taskRepository === null) {
             throw new \InvalidArgumentException;
         }
 

@@ -165,6 +165,7 @@ return [
         /*
          * Package Service Providers...
          */
+        App\Providers\Task\TaskUseCaseServiceProvider::class,
 
         /*
          * Application Service Providers...

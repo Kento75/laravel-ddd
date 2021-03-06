@@ -2,6 +2,7 @@
 
 namespace App\Infra\Task\Repositories;
 
+use App\Domain\Task\Entities\Task;
 use App\domain\Task\Repositories\TaskRepository;
 
 class TaskRdbRepository implements TaskRepository
@@ -11,8 +12,7 @@ class TaskRdbRepository implements TaskRepository
         return null;
     }
 
-    public function findById(int $taskId): Task
+    public function findById(string $taskId)
     {
-        return null;
     }
 }
