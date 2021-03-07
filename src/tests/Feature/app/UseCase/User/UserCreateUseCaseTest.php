@@ -29,13 +29,13 @@ class UserCreateUseCaseTest extends TestCase
     {
         // Arrange
         $userName = 'user名';
-        $createUserId = $this->userCreateUseCase->createUser($userName);
 
         // Act
-        $createdUser = $this->userRepository->findById($createUserId);
+        $createUserId = $this->userCreateUseCase->createUser($userName);
 
         // Assert
+        $createdUser = $this->userRepository->findById($createUserId);
         $this->assertEquals($userName, $createdUser->getName());
         $this->assertEquals(UserStatus::ACTIVE(), $createdUser->getUserStatus());
-      }
+    }
 }
