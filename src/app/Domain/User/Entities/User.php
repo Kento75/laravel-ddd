@@ -19,7 +19,7 @@ class User
         $this->userStatus = UserStatus::ACTIVE();
     }
 
-    public function deactive()
+    public function deactivate()
     {
         $this->userStatus = UserStatus::INACTIVE();
     }

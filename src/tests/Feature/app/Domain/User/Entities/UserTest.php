@@ -32,14 +32,14 @@ class UserTest extends TestCase
     /**
      * @test
      */
-    public function deactive()
+    public function deactivate()
     {
         // Arrange
         $userName = "ユーザー名";
         $user = new User($userName);
 
         // Act
-        $user->deactive();
+        $user->deactivate();
 
         // Assert
         $this->assertEquals(UserStatus::INACTIVE(), $user->getUserStatus());
