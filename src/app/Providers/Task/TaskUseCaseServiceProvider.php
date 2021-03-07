@@ -17,6 +17,10 @@ class TaskUseCaseServiceProvider extends ServiceProvider
             // return new \App\UseCase\Task\TaskCreateUseCase(new \App\Infra\Task\Repositories\TaskRdbRepository);
             return new \App\UseCase\Task\TaskCreateUseCase(new \App\Infra\Task\Repositories\TaskMockRepository);
         });
+        $this->app->bind(\App\UseCase\Task\TaskPostponeUseCase::class, function ($app) {
+            // return new \App\UseCase\Task\TaskCreateUseCase(new \App\Infra\Task\Repositories\TaskRdbRepository);
+            return new \App\UseCase\Task\TaskPostponeUseCase(new \App\Infra\Task\Repositories\TaskMockRepository);
+        });
     }
 
     /**
